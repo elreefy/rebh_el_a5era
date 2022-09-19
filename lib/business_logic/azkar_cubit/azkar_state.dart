@@ -1,4 +1,4 @@
-part of 'social_cubit.dart';
+part of 'azkar_cubit.dart';
 
 @immutable
 abstract class SocialState {}

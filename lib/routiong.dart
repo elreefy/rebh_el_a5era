@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:mini_socia/business_logic/news_cubit/social_cubit.dart';
+// import 'package:mini_socia/business_logic/news_cubit/azkar_cubit.dart';
 // import 'package:mini_socia/presentation/screens/screens/create_post.dart';
 // import 'package:mini_socia/presentation/screens/screens/login_screen.dart';
 // import 'package:mini_socia/presentation/screens/screens/register_screen.dart';

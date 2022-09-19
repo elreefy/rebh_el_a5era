@@ -2,7 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
-import '../../business_logic/news_cubit/social_cubit.dart';
+import '../../business_logic/azkar_cubit/azkar_cubit.dart';
 import '../repository/social_repository.dart';
 import 'dio_helper.dart';
 final getIt = GetIt.instance;

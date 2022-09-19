@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MyColors {
+  //save #081945 in static variable background color
+  static Color background = Color(0xff081945);
+  //#DC8B18 in variable iconColor
+  static Color iconColor = Color(0xffDC8B18);
+  //843BB9 in variable text color
+  static Color textColor = Color(0xff843BB9);
+//14234C in variable text container text color
+  static Color containerTextColor = Color(0xff14234C);
+
+
   static var primary = Color(0xffe6aa29);
   static var secondary = Color(0xff262c3a);
   static var dark = Color(0xFF8D8E98);

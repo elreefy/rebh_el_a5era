@@ -2,7 +2,7 @@
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:mini_socia/layout/home_layout.dart';
 //
-// import '../../../business_logic/news_cubit/social_cubit.dart';
+// import '../../../business_logic/news_cubit/azkar_cubit.dart';
 // import '../../../shared/components/components.dart';
 //
 // class RegisterScreen extends StatelessWidget {

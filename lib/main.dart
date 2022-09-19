@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rebh_el_a5era/presentation/screens/screens/azkar_screen.dart';
+import 'package:rebh_el_a5era/shared/constants/theme_manager.dart';
+import 'business_logic/azkar_cubit/azkar_cubit.dart';
 import 'business_logic/cubit/cubit_observer.dart';
-import 'business_logic/news_cubit/social_cubit.dart';
 import 'data/api/init_get_it.dart';
 import 'data/cashe_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'routiong.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,25 +41,22 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-       // onGenerateRoute: RouteGenerator.generateRoute,
-       // initialRoute: intialRoute,
-        debugShowCheckedModeBanner: false,
-        builder: BotToastInit(), //1. call BotToastInit
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('ar', "AE"),
+        ],
+        builder: BotToastInit(),
         navigatorObservers: [BotToastNavigatorObserver()],
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar.Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          primarySwatch: Colors.blue,
-        ),
+        debugShowCheckedModeBanner: false,
         home: const AzkarScreen(),
+
+        title: 'Flutter Demo',
+        theme: getApplicationTheme(),
+      //  home: const AzkarScreen(),
       ),
     );
   }
