@@ -14,8 +14,8 @@ import 'package:clipboard/clipboard.dart';
 
 import '../../../shared/constants/font_manager.dart';
 import '../../../shared/constants/styles_manager.dart';
-class AzkarScreen extends StatelessWidget {
-  const AzkarScreen({Key? key}) : super(key: key);
+class EveningAzkar extends StatelessWidget {
+  const EveningAzkar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +28,13 @@ class AzkarScreen extends StatelessWidget {
         // TODO: implement listener
       },
       builder: (context, state) {
-        List<AzkarModel>? morningAzkarList=AzkarCubit.get(context).morningAzkarList;
+        List<AzkarModel>? eveningAzkarList=AzkarCubit.get(context).eveningAzkarList;
         return Scaffold(
           appBar:AppBar(
             centerTitle: true,
             backgroundColor: MyColors.background,
             title: Text(
-              "أذكار الصباح",
+              "أذكار المساء",
             style: getBoldStyle(color: MyColors.textColor,
             fontSize: FontSizeManager.s22)
 
@@ -53,7 +53,7 @@ class AzkarScreen extends StatelessWidget {
                       return buildAzkarItem(
                           AzkarCubit
                               .get(context)
-                              .morningAzkarList![index], context,index
+                              .eveningAzkarList![index], context,index
                       );
                   },
                   separatorBuilder: (context, index) => Container(
@@ -61,12 +61,12 @@ class AzkarScreen extends StatelessWidget {
                     height: 1,
                     color: Colors.grey[300],
                   ),
-                  itemCount: AzkarCubit.get(context).morningAzkarList!.length,
+                  itemCount: AzkarCubit.get(context).eveningAzkarList!.length,
                 ),
               ),
             ); },
         fallback: (BuildContext context) { return Center(child: CircularProgressIndicator(),); },
-            condition: AzkarCubit.get(context).morningAzkarList?.length != 0,
+            condition: AzkarCubit.get(context).eveningAzkarList?.length != 0,
           ),
         );
       },

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Routes {
+class AppRoutes {
   static const String mainRoute = "/main";
   static const String azanRoute = "/azan";
-  static const String azkarRoute = "/azkarView";
+  static const String morningAzkar = "/morningAzkar";
+  static const String eveningAzkar = "/eveningAzkar";
+  static const String sleepAzkar = "/sleepAzkar";
   static const String contantUsRoute = "/contantUs";
   static const String kibleRoute = "/kible";
   static const String nawawiRoute = "/nawawi";

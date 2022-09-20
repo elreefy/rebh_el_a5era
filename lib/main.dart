@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rebh_el_a5era/presentation/screens/screens/azkar_screen.dart';
+import 'package:rebh_el_a5era/presentation/screens/screens/evening_azkar.dart';
+import 'package:rebh_el_a5era/presentation/screens/screens/morning_azkar.dart';
+import 'package:rebh_el_a5era/presentation/screens/screens/sleep_azkar.dart';
+import 'package:rebh_el_a5era/shared/constants/routes_manager.dart';
 import 'package:rebh_el_a5era/shared/constants/theme_manager.dart';
 import 'business_logic/azkar_cubit/azkar_cubit.dart';
 import 'business_logic/cubit/cubit_observer.dart';
@@ -8,6 +11,7 @@ import 'data/api/init_get_it.dart';
 import 'data/cashe_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'layout/navbar.dart';
 import 'routiong.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -37,10 +41,14 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => getIt<AzkarCubit>()
           ..getMorningAzkar()
+          ..getEveningAzkar()
+          ..getSleepAzkar()
 
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
@@ -49,11 +57,13 @@ class MyApp extends StatelessWidget {
         supportedLocales: const [
           Locale('ar', "AE"),
         ],
+
         builder: BotToastInit(),
         navigatorObservers: [BotToastNavigatorObserver()],
-        debugShowCheckedModeBanner: false,
-        home: const AzkarScreen(),
-
+        //debugShowCheckedModeBanner: false,
+       // home:  HomeLayout(),
+          initialRoute: AppRoutes.mainRoute,
+        onGenerateRoute:RouteGenerator.generateRoute,
         title: 'Flutter Demo',
         theme: getApplicationTheme(),
       //  home: const AzkarScreen(),

@@ -6,6 +6,37 @@ import 'styles_manager.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData(
+    //floated button
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: MyColors.floatedButtonColor,
+      foregroundColor: Colors.white,
+    ),
+    //bottom navigation bar
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: MyColors.bottomNavBarColor,
+      selectedItemColor: MyColors.textColor,
+      unselectedItemColor: MyColors.textColor,
+      elevation: 0,
+      type: BottomNavigationBarType.fixed,
+      selectedLabelStyle: getBoldStyle(
+        color: MyColors.textColor,
+        fontSize: FontSizeManager.s16,
+      ),
+      unselectedLabelStyle: getBoldStyle(
+        color: MyColors.textColor,
+        fontSize: FontSizeManager.s16,
+      ),
+    ),
+    //Scaffold background color
+    scaffoldBackgroundColor: MyColors.background,
+    //appbar color
+    appBarTheme: AppBarTheme(
+      backgroundColor: MyColors.background,
+      elevation: 0,
+      iconTheme: IconThemeData(color: MyColors.kWhiteColor),
+      titleTextStyle: getBoldStyle(
+          color: MyColors.textColor, fontSize: FontSizeManager.s22),
+    ),
     //*  main Colors
     primaryColor: MyColors.background,
     primaryColorLight: MyColors.background,

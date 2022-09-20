@@ -20,7 +20,7 @@ class AppStrings {
   static const quran = "القرآن الكريم";
   static const quranGreat = "القرآن العظيم";
   static const radio = "إذاعات القرآن";
-  static const azkar = "الأذكار";
+  static const azkar = "أذكار";
   static const azan = "مواقيت الصلاة";
   static const nawawi = "الأربعون النووية";
   static const languageCode = "ar";

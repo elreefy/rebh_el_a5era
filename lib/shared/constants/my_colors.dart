@@ -9,6 +9,8 @@ class MyColors {
   static Color textColor = Color(0xff843BB9);
 //14234C in variable text container text color
   static Color containerTextColor = Color(0xff14234C);
+  static Color bottomNavBarColor = Color(0xff162451);
+  static Color floatedButtonColor = Color(0xff8A38BE);
 
 
   static var primary = Color(0xffe6aa29);
