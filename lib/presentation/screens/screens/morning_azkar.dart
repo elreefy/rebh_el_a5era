@@ -31,6 +31,46 @@ class MorningAzkar extends StatelessWidget {
         List<AzkarModel>? morningAzkarList=AzkarCubit.get(context).morningAzkarList;
         return Scaffold(
           appBar:AppBar(
+            //action button
+            actions: [
+              InkWell(
+                onTap: () {
+                  AzkarCubit.get(context).playMorningAudio();
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: 10,
+
+                      top: 10,
+                      bottom: 10),
+
+                  child: Container(
+
+                    height: 55,
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: MyColors.floatedButtonColor,
+                      shape: BoxShape.circle,
+
+                    ),
+                    //if state is SocialRadioPlayState then show pause icon else show play icon
+                    child: AzkarCubit.get(context).isPlayingMorningAudio?
+                    Icon(Icons.pause,
+                      size: 30,
+                      color: MyColors.kWhiteColor,)
+                        :Icon(Icons.play_arrow_outlined,
+                      size: 30,
+                      color: MyColors.kWhiteColor,),
+
+                    // child:  Icon(
+                    //   AzkarCubit.get(context).icon,
+                    //   size: 30,
+                    //   color: MyColors.kWhiteColor,
+                    // ),
+                  ),
+                ),
+              ),
+            ],
             centerTitle: true,
             backgroundColor: MyColors.background,
             title: Text(

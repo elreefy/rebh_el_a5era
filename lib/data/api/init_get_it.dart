@@ -15,7 +15,7 @@ void initGetIt() {
 
 Dio createAndSetupDio() {
   final dio = Dio();
-  dio.options.baseUrl = 'https://woilo.devmee.tech/api//users/';
+//  dio.options.baseUrl = 'https://www.mp3quran.net/api';
   dio.options.connectTimeout = 5000;
   //dio.options.receiveTimeout = 3000;
   dio.interceptors.add(LogInterceptor(

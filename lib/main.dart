@@ -11,7 +11,7 @@ import 'data/api/init_get_it.dart';
 import 'data/cashe_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'layout/navbar.dart';
+import 'layout/home_layout.dart';
 import 'routiong.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -43,7 +43,8 @@ class MyApp extends StatelessWidget {
           ..getMorningAzkar()
           ..getEveningAzkar()
           ..getSleepAzkar()
-
+            ..getAllSurah()
+    //      ..getAllRadio()
         ),
       ],
       child: MaterialApp(
