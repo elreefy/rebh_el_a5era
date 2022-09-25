@@ -4,6 +4,7 @@ import 'package:rebh_el_a5era/business_logic/azkar_cubit/azkar_cubit.dart';
 import 'package:rebh_el_a5era/shared/constants/my_colors.dart';
 //import bloc consumer
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../business_logic/azkar_cubit/quraan_cubit.dart';
 import '../shared/components/components.dart';
 import '../shared/constants/strings.dart';
 
@@ -19,10 +20,10 @@ class _HomeLayoutState
 
   @override
   Widget build(BuildContext context) {
- //  bool isPlaying=AzkarCubit.get(context).isPlaying;
+ //  bool isPlaying=QuraanCubit.get(context).isPlaying;
     Size size = MediaQuery.of(context).size;
     double height = 50;
-    return BlocConsumer<AzkarCubit, SocialState>(
+    return BlocConsumer<QuraanCubit, QuraanState>(
   listener: (context, state) {
     // TODO: implement listener
   },
@@ -49,9 +50,9 @@ class _HomeLayoutState
                 clipper: bottomNavClip(),
                 child: BottomNavigationBar(
                   type: BottomNavigationBarType.fixed,
-                  currentIndex: AzkarCubit.get(context).currentIndex,
+                  currentIndex: QuraanCubit.get(context).currentIndex,
                   onTap: (index) {
-                    AzkarCubit.get(context).changeBottom(index);
+                    QuraanCubit.get(context).changeBottom(index);
                   },
                   items: [
                     BottomNavigationBarItem(
@@ -79,7 +80,7 @@ class _HomeLayoutState
             left: 0.5*MediaQuery.of(context).size.width-30,
             child: InkWell(
               onTap: () {
-                AzkarCubit.get(context).playRadio();
+             //   QuraanCubit.get(context).playRadio();
               },
               child: Container(
 
@@ -91,7 +92,7 @@ class _HomeLayoutState
 
                 ),
                 //if state is SocialRadioPlayState then show pause icon else show play icon
-                child: AzkarCubit.get(context).isPlaying?
+                child: QuraanCubit.get(context).isPlaying?
                 Icon(Icons.pause,
                   size: 30,
                   color: MyColors.kWhiteColor,)
@@ -103,7 +104,7 @@ class _HomeLayoutState
           ),
         ],
       ),
-      body: AzkarCubit.get(context).screens[AzkarCubit.get(context).currentIndex],
+      body: QuraanCubit.get(context).screens[QuraanCubit.get(context).currentIndex],
       );
   },
 );

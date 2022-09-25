@@ -15,7 +15,7 @@ ThemeData getApplicationTheme() {
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: MyColors.bottomNavBarColor,
       selectedItemColor: MyColors.textColor,
-      unselectedItemColor: MyColors.textColor,
+      unselectedItemColor: Colors.grey[700],
       elevation: 0,
       type: BottomNavigationBarType.fixed,
       selectedLabelStyle: getBoldStyle(

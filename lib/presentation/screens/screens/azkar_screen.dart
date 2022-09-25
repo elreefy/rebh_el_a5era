@@ -22,7 +22,7 @@ class _HomeLayoutState
  //  bool isPlaying=AzkarCubit.get(context).isPlaying;
     Size size = MediaQuery.of(context).size;
     double height = 50;
-    return BlocConsumer<AzkarCubit, SocialState>(
+    return BlocConsumer<AzkarCubit, AzkarState>(
   listener: (context, state) {
     // TODO: implement listener
   },

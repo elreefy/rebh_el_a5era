@@ -33,7 +33,7 @@ class _RestClient implements RestClient {
   }
 
   @override
-  Future<dynamic> getSurah() async {
+  Future<dynamic> getAllSurah() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -55,7 +55,7 @@ class _RestClient implements RestClient {
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<dynamic>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/${surahNumber}',
+            .compose(_dio.options, '/surah/${surahNumber}',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;

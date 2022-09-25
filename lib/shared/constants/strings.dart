@@ -5,6 +5,7 @@ const String createPostScreen = '/createPostScreen';
  String firstProfileImage =  'https://i.pinimg.com/736x/68/a5/aa/68a5aa104457ecac4d4136285a830e3e.jpg';
      String firstCoverImage = 'https://www.gstatic.com/webp/gallery/1.jpg';
 String tarateelUrl='https://Qurango.net/radio/tarateel';
+
      class AppStrings {
   static const String noRoutes = "No Routes Error";
   static const error = "خطأ";

@@ -13,11 +13,14 @@ abstract class RestClient {
   //todo shof path from omar ahmed
   //get list of surah
   @GET('/surah')
-  Future getSurah();
+  Future getAllSurah();
   //use this method to get quran from api
-  @GET('/{surahNumber}')
+  //http://api.alquran.cloud/v1/surah/114
+  @GET('/surah/{surahNumber}')
+  //@GET('/surah/{1')
   Future getQuran(
-      @Path('surahNumber') int surahNumber);
+      @Path('surahNumber') num surahNumber
+      );
   //  use this method to get quran from api
   @GET('/{surahNumber}/{ayahNumber}')
   Future getAyah

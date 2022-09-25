@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:rebh_el_a5era/data/models/Azkar_model.dart';
-import 'package:rebh_el_a5era/data/models/surah_list.dart';
 
 import '../../shared/constants/strings.dart';
 import '../api/dio_helper.dart';
@@ -12,6 +11,7 @@ import '../azkar_db.dart';
 import '../models/RadioModel.dart';
 import '../models/Radio_model.dart';
 import '../models/SurahModel.dart';
+import '../models/quraan_model.dart';
 
 //
 
@@ -22,10 +22,19 @@ class AzkarRepository {
 
   AzkarRepository(this.restClient);
 
+
+  //get quran using rest client and return it as list of Quraan model
+  Future<QuraanModel> getQuraan(
+      num surahNumber) async {
+    //get surah using rest client then map it to return list of surah model
+    final response=await restClient.getQuran(surahNumber);
+    return QuraanModel.fromJson(response);
+  }
+
   //get surah using rest client
   Future<SurahModel> getAllsurah() async {
     //get surah using rest client then map it to return list of surah model
-    final response=await restClient.getSurah();
+    final response=await restClient.getAllSurah();
     return SurahModel.fromJson(response);
   }
   //get azkar from list db where category = 'أذكار الصباح'

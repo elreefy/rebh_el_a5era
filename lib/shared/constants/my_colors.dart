@@ -11,6 +11,7 @@ class MyColors {
   static Color containerTextColor = Color(0xff14234C);
   static Color bottomNavBarColor = Color(0xff162451);
   static Color floatedButtonColor = Color(0xff8A38BE);
+  static Color starTextColor = Color(0xffAC7224);
 
 
   static var primary = Color(0xffe6aa29);

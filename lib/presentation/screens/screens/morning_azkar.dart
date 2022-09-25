@@ -23,7 +23,7 @@ class MorningAzkar extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     //width of screen
     double width = MediaQuery.of(context).size.width;
-    return BlocConsumer<AzkarCubit, SocialState>(
+    return BlocConsumer<AzkarCubit, AzkarState>(
       listener: (context, state) {
         // TODO: implement listener
       },

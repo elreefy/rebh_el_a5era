@@ -6,6 +6,7 @@ import 'package:rebh_el_a5era/presentation/screens/screens/sleep_azkar.dart';
 import 'package:rebh_el_a5era/shared/constants/routes_manager.dart';
 import 'package:rebh_el_a5era/shared/constants/theme_manager.dart';
 import 'business_logic/azkar_cubit/azkar_cubit.dart';
+import 'business_logic/azkar_cubit/quraan_cubit.dart';
 import 'business_logic/cubit/cubit_observer.dart';
 import 'data/api/init_get_it.dart';
 import 'data/cashe_helper.dart';
@@ -43,8 +44,15 @@ class MyApp extends StatelessWidget {
           ..getMorningAzkar()
           ..getEveningAzkar()
           ..getSleepAzkar()
-            ..getAllSurah()
+          ..getAllSurah()
+          ..getQuraan(
+              surahNumber: 1,
+          )
     //      ..getAllRadio()
+
+
+        ),
+        BlocProvider(create: (context) => getIt<QuraanCubit>()
         ),
       ],
       child: MaterialApp(
