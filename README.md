@@ -22,16 +22,13 @@ The application contains the Noble Qur’an, Qur’an radio stations, morning an
 الصفحة أو الرقم: 3461 | خلاصة حكم المحدث : [صحيح] |
 ```
 
-<img src="
 ![WhatsApp Image 2022-09-28 at 6 11 51 AM (2)](https://user-images.githubusercontent.com/100224276/192691740-00e67498-d771-44a2-8f2d-008d4e95eaa1.jpeg)
-" height="400" >
-<img src="screenshots/2.jpeg" height="400" >
-<img src="screenshots/3.jpeg" height="400" >
-<img src="screenshots/4.jpeg" height="400" >
-<img src="screenshots/5.jpeg" height="400" >
-<img src="screenshots/6.jpeg" height="400" >
-<img src="screenshots/7.jpeg" height="400" >
-<img src="screenshots/3.png" height="400" >
+![WhatsApp Image 2022-09-28 at 6 11 51 AM (1)](https://user-images.githubusercontent.com/100224276/192691980-7a12327a-b49b-43a3-bae0-83cb1d01406a.jpeg)
+![WhatsApp Image 2022-09-28 at 6 11 51 AM](https://user-images.githubusercontent.com/100224276/192691993-c7e61c6a-a532-4349-aff1-19add9754059.jpeg)
+![WhatsApp Image 2022-09-28 at 6 11 50 AM (2)](https://user-images.githubusercontent.com/100224276/192692003-ab873930-13a6-46bf-9322-aeec0711f307.jpeg)
+![WhatsApp Image 2022-09-28 at 6 11 50 AM (1)](https://user-images.githubusercontent.com/100224276/192692008-689e4bbb-176f-4eb5-baad-b1fdb5a99250.jpeg)
+![WhatsApp Image 2022-09-28 at 6 11 50 AM](https://user-images.githubusercontent.com/100224276/192692013-6e00ce7b-75e9-4d00-b21c-7fd3175e0322.jpeg)
+![WhatsApp Image 2022-09-28 at 6 11 49 AM](https://user-images.githubusercontent.com/100224276/192692016-1a052dfc-b9c6-4f76-8f21-925d6af3f3f0.jpeg)
 
 <div align="left">
 
