@@ -29,7 +29,7 @@ The application contains the Noble Qur’an, Qur’an radio stations, morning an
 <img src="screenshots/5.jpeg" height="400" >
 <img src="screenshots/6.jpeg" height="400" >
 <img src="screenshots/7.jpeg" height="400" >
-
+<img src="screenshots/3.png" height="400" >
 
 <div align="left">
 
