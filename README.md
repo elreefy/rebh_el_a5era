@@ -22,7 +22,9 @@ The application contains the Noble Qur’an, Qur’an radio stations, morning an
 الصفحة أو الرقم: 3461 | خلاصة حكم المحدث : [صحيح] |
 ```
 
-<img src="screenshots/1.jpeg" height="400" >
+<img src="
+![WhatsApp Image 2022-09-28 at 6 11 51 AM (2)](https://user-images.githubusercontent.com/100224276/192691740-00e67498-d771-44a2-8f2d-008d4e95eaa1.jpeg)
+" height="400" >
 <img src="screenshots/2.jpeg" height="400" >
 <img src="screenshots/3.jpeg" height="400" >
 <img src="screenshots/4.jpeg" height="400" >
