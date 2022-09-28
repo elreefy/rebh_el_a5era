@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:rebh_el_a5era/business_logic/azkar_cubit/azkar_cubit.dart';
 import 'package:rebh_el_a5era/shared/constants/my_colors.dart';
 //import bloc consumer
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'Menu.dart';
 import '../../../shared/components/components.dart';
 import '../../../shared/constants/strings.dart';
 
@@ -28,10 +30,14 @@ class _HomeLayoutState
   },
   builder: (context, state) {
     return Scaffold(
+     // drawer: DrawerWidget(child: Text('sca,s;lcsl'),),
+      backgroundColor:MyColors.background,
       appBar: AppBar(
         leading: InkWell(
           onTap: () {
-            AzkarCubit.get(context).getAllRadio();
+          //  AzkarCubit.get(context).getAllRadio();
+            //zoom drawer toggle
+            ZoomDrawer.of(context)!.toggle();
           },
           child: Icon(
             Icons.list,
@@ -74,22 +80,25 @@ class _HomeLayoutState
             height: 0.02*MediaQuery.of(context).size.height,
           ),
           azkarContainer(
+            isDataExist: false,
             context: context,
-            image: 'assets/images/WhatsApp Image 2022-09-20 at 5.23.03 PM.jpeg',
+            image: 'assets/images/WhatsApp Image 2022-09-26 at 9.03.07 PM.jpeg',
           ),
           SizedBox(
             height: 0.02*MediaQuery.of(context).size.height,
           ),
           azkarContainer(
+            isDataExist: false,
             context: context,
-            image: 'assets/images/WhatsApp Image 2022-09-20 at 5.23.03 PM.jpeg',
+            image: 'assets/images/WhatsApp Image 2022-09-26 at 9.03.38 PM.jpeg',
           ),
           SizedBox(
             height: 0.02*MediaQuery.of(context).size.height,
           ),
           azkarContainer(
+            isDataExist:false,
             context: context,
-            image: 'assets/images/WhatsApp Image 2022-09-20 at 5.23.03 PM.jpeg',
+            image: 'assets/images/WhatsApp Image 2022-09-26 at 9.03.48 PM.jpeg',
           ),
           Spacer(),
         ],

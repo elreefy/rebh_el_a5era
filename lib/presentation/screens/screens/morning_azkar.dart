@@ -8,6 +8,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:rebh_el_a5era/shared/components/components.dart';
 import 'package:rebh_el_a5era/shared/constants/app_size.dart';
 import 'package:rebh_el_a5era/shared/constants/my_colors.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../../business_logic/azkar_cubit/azkar_cubit.dart';
 import '../../../data/models/Azkar_model.dart';
 import 'package:clipboard/clipboard.dart';
@@ -25,7 +26,12 @@ class MorningAzkar extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return BlocConsumer<AzkarCubit, AzkarState>(
       listener: (context, state) {
-        // TODO: implement listener
+//if state is  MorningAzkarPauseAudioState showToast2 elseif MorningAzkarPauseAudioState showToast2
+      if(state is MorningAzkarPauseAudioState){
+        showToast2(msg: "تم إيقاف الصوت", state: ToastStates.ERROR);
+      }else if(state is MorningAzkarPlayAudioState){
+        showToast2(msg: "تم تشغيل الصوت",state: ToastStates.SUCCESS);
+      }
       },
       builder: (context, state) {
         List<AzkarModel>? morningAzkarList=AzkarCubit.get(context).morningAzkarList;
@@ -183,10 +189,7 @@ class MorningAzkar extends StatelessWidget {
               //icon of share
               IconButton(
                 onPressed: () {
-                  //share zekr.zekr  text with whats up or messanger
-
-
-
+                  Share.share(zekr.zekr!);
                 },
                 icon: Icon(
                   Icons.share,

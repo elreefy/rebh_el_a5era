@@ -2,10 +2,16 @@ part of 'azkar_cubit.dart';
 
 @immutable
 abstract class AzkarState {}
+//EveningAzkarPauseAudioState
+class EveningAzkarPauseAudioState extends AzkarState {}
+// EveningAzkarPlayAudioState
+class EveningAzkarPlayAudioState extends AzkarState {}
+
+
 //QuraanPauseAudioState
-class AzkarPauseAudioState extends AzkarState {}
+class MorningAzkarPauseAudioState extends AzkarState {}
 //QuraanPlayAudioState
-class AzkarPlayAudioState extends AzkarState {}
+class MorningAzkarPlayAudioState extends AzkarState {}
 class SocialInitial extends AzkarState {}
 //SocialGetAzkarLoadingState
 class SocialGetAzkarLoadingState extends AzkarState {}

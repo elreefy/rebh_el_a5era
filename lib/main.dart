@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rebh_el_a5era/presentation/screens/screens/evening_azkar.dart';
 import 'package:rebh_el_a5era/presentation/screens/screens/morning_azkar.dart';
@@ -13,6 +14,7 @@ import 'data/cashe_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'layout/home_layout.dart';
+import 'presentation/screens/screens/zoom_drawer.dart';
 import 'routiong.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -21,6 +23,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      //make bottom bar transparent
+      systemNavigationBarColor: Colors.transparent,
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
   await CacheHelper.init();
   //init get it
   initGetIt();
@@ -45,9 +55,6 @@ class MyApp extends StatelessWidget {
           ..getEveningAzkar()
           ..getSleepAzkar()
           ..getAllSurah()
-          ..getQuraan(
-              surahNumber: 1,
-          )
     //      ..getAllRadio()
 
 
@@ -70,12 +77,11 @@ class MyApp extends StatelessWidget {
         builder: BotToastInit(),
         navigatorObservers: [BotToastNavigatorObserver()],
         //debugShowCheckedModeBanner: false,
-       // home:  HomeLayout(),
+       // home:  zoom(),
           initialRoute: AppRoutes.mainRoute,
         onGenerateRoute:RouteGenerator.generateRoute,
         title: 'Flutter Demo',
         theme: getApplicationTheme(),
-      //  home: const AzkarScreen(),
       ),
     );
   }

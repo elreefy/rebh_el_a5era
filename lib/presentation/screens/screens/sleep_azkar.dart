@@ -8,6 +8,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:rebh_el_a5era/shared/components/components.dart';
 import 'package:rebh_el_a5era/shared/constants/app_size.dart';
 import 'package:rebh_el_a5era/shared/constants/my_colors.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../../business_logic/azkar_cubit/azkar_cubit.dart';
 import '../../../data/models/Azkar_model.dart';
 import 'package:clipboard/clipboard.dart';
@@ -143,10 +144,7 @@ class SleepAzkar extends StatelessWidget {
               //icon of share
               IconButton(
                 onPressed: () {
-                  //share zekr.zekr  text with whats up or messanger
-
-
-
+                  Share.share(zekr.zekr!);
                 },
                 icon: Icon(
                   Icons.share,

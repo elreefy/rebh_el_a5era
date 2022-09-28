@@ -25,10 +25,24 @@ class _HomeLayoutState
     double height = 50;
     return BlocConsumer<QuraanCubit, QuraanState>(
   listener: (context, state) {
-    // TODO: implement listener
+   //if state is QuraanlRadioPlayState showToast2
+    if (state is QuraanlRadioPlayState) {
+      showToast2(
+        msg: 'تم تشغيل تراتيل قصيرة',
+        state: ToastStates.SUCCESS,
+      );
+    }else if(state is QuraanlRadioPauseState){
+      // showToast2
+      showToast2(
+        msg: 'تم ايقاف تراتيل قصيرة',
+        state: ToastStates.ERROR,
+      );
+    }
+
   },
   builder: (context, state) {
     return Scaffold(
+      backgroundColor: MyColors.background,
     //  floatingActionButton: const Icon(
     //    Icons.play_arrow_outlined,
     //  ),
@@ -80,7 +94,7 @@ class _HomeLayoutState
             left: 0.5*MediaQuery.of(context).size.width-30,
             child: InkWell(
               onTap: () {
-             //   QuraanCubit.get(context).playRadio();
+                QuraanCubit.get(context).playRadio();
               },
               child: Container(
 

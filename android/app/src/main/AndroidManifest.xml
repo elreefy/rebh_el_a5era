@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rebh_el_a5era">
+    package="com.better.rebh">
    <application
         android:label="rebh_el_a5era"
         android:name="${applicationName}"

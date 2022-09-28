@@ -26,10 +26,11 @@ void playRadio() {
     icon = Icons.play_arrow_rounded;
     emit(QuraanlRadioPauseState());
   } else {
+    emit(QuraanlRadioPlayState());
     audioPlayer.play(tarateelUrl);
     isPlaying = true;
     icon = Icons.pause;
-    emit(QuraanlRadioPlayState());
+
   }
    }
   int currentIndex = 0;

@@ -5,8 +5,6 @@ import 'package:just_audio/just_audio.dart';
 
 import 'package:path/path.dart' as Path;
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/api/dio_helper.dart';
@@ -141,16 +139,34 @@ class AzkarCubit extends Cubit<AzkarState> {
   void playMorningAudio() {
     if (isPlayingMorningAudio) {
       //pause   audioCache
+      emit(MorningAzkarPauseAudioState());
       audioPlayer2.pause();
       isPlayingMorningAudio = false;
       iconAudio = Icons.play_arrow_rounded;
-      emit(AzkarPauseAudioState());
     } else {
+      emit(MorningAzkarPlayAudioState());
       isPlayingMorningAudio = true;
       iconAudio = Icons.pause;
-      audioPlayer2.setAsset('assets/images/WhatsApp Audio 2022-09-22 at 3.33.39 AM.mpeg');
+      audioPlayer2.setAsset
+        ('assets/json/WhatsApp Audio 2022-09-22 at 3.33.39 AM.mpeg');
       audioPlayer2.play();
-      emit(AzkarPlayAudioState());
+    }
+  }
+  bool isPlayingEveningAudio = false;
+  void playEveningAudio() {
+    if (isPlayingEveningAudio) {
+      emit(EveningAzkarPauseAudioState());
+      audioPlayer2.pause();
+      isPlayingEveningAudio = false;
+      iconAudio = Icons.play_arrow_rounded;
+    } else {
+      emit(EveningAzkarPlayAudioState());
+      isPlayingEveningAudio = true;
+      iconAudio = Icons.pause;
+      audioPlayer2.setAsset
+        ('assets/json/WhatsApp Audio 2022-09-26 at 10.38.09 PM.mpeg');
+
+      audioPlayer2.play();
     }
   }
      //load audio from assets (assets/images/WhatsApp Audio 2022-09-22 at 3.33.39 AM.mpeg) using audioCache package and play it using audioplayers package
@@ -161,11 +177,11 @@ class AzkarCubit extends Cubit<AzkarState> {
      emit(SocialGetAzkarLoadingState());
      try {
        surahModel = await azkarRepository.getAllsurah();
-       // print('\n\n\n\n\n');
-       // print('surah list is dh fel cubit${surahModel!.data![0].name}');
-       // print('surah list is dh fel cubit${surahModel!.data![0].number}');
-       // print('surah list is dh fel cubit${surahModel!.data![0].englishName}');
-       // print('\n\n\n\n\n');
+     //   print('\n\n\n\n\n');
+     //   print('surah list is dh fel cubit${surahModel!.data![0].name}');
+     //   print('surah list is dh fel cubit${surahModel!.data![0].number}');
+     //  print('surah list is dh fel cubit${surahModel!.data![0].englishName}');
+      //  print('\n\n\n\n\n');
     } catch (e) {
       print(e.toString());
     }

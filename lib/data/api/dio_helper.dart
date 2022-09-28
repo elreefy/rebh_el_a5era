@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 part 'dio_helper.g.dart';
 @RestApi(baseUrl: 'http://api.alquran.cloud/v1')
+//http://api.alquran.cloud/v1/surah
 //@RestApi(baseUrl: 'https://www.mp3quran.net/api')
 abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;

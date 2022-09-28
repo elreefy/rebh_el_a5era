@@ -1,19 +1,15 @@
 import 'package:bot_toast/bot_toast.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:rebh_el_a5era/shared/constants/strings.dart';
 import '../constants/my_colors.dart';
-
-
-
-
 Widget dividerSeparator() => Divider(
   thickness: 0.3,
   color: MyColors.dark,
 );
 
-Widget azkarContainer({context,image,route}) {
+Widget azkarContainer({context,image,route,isDataExist=true}) {
   return   Padding(
     padding:EdgeInsets.symmetric(
       horizontal: //.1*width screen
@@ -21,7 +17,12 @@ Widget azkarContainer({context,image,route}) {
     ),
     child: InkWell(
       onTap: (){
-        Navigator.pushNamed(context, route);
+        if(isDataExist){
+          Navigator.pushNamed(context, route);
+        }
+        else{
+          showToast2(msg: 'coming soon', state: ToastStates.ERROR);
+        }
       },
       child: Container(
         height: 0.1*MediaQuery.of(context).size.height,
@@ -45,21 +46,13 @@ enum ToastStates { SUCCESS, ERROR, WARNING }
 Color toastColor(ToastStates state) {
   switch (state) {
     case ToastStates.SUCCESS:
-      return Colors.green;
+      return MyColors.rightPlay;
     case ToastStates.ERROR:
-      return Colors.red;
+      return MyColors.centerPause;
     case ToastStates.WARNING:
       return Colors.yellow;
   }
 }
-String getNowDateTime (Timestamp dateTime) {
-  String date =DateFormat.yMd().format(dateTime.toDate()).toString();
-  String time = DateFormat.Hm().format(dateTime.toDate()).toString();
-  List<String> nowSeparated = [date,time];
-  String nowJoined = nowSeparated.join(' at ');
-  return nowJoined;
-}
-String time = DateTime.now().toString().split(' ').elementAt(1);
 //show toast using flutter toast
 void showToast2({
   required String msg,

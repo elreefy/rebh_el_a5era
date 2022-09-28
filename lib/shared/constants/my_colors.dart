@@ -14,7 +14,15 @@ class MyColors {
   static Color starTextColor = Color(0xffAC7224);
 
 
-  static var primary = Color(0xffe6aa29);
+  static var rightPause = Color(0xff55234F);
+  static var centerPause = Color(0xff672748);
+  static var leftPause  = Color(0xff983162);
+
+  static var rightPlay  = Color(0xff45636B);
+  static var centerPlay = Color(0xff465372);
+  static var leftPlay   = Color(0xff3C4176);
+
+
   static var secondary = Color(0xff262c3a);
   static var dark = Color(0xFF8D8E98);
   static var darkness = Color(0xffbdbdbd);

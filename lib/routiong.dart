@@ -5,13 +5,15 @@ import 'package:rebh_el_a5era/presentation/screens/screens/morning_azkar.dart';
 import 'package:rebh_el_a5era/presentation/screens/screens/sleep_azkar.dart';
 import 'package:rebh_el_a5era/shared/constants/routes_manager.dart';
 import 'package:rebh_el_a5era/shared/constants/strings.dart';
+
+import 'presentation/screens/screens/zoom_drawer.dart';
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // final args = settings.arguments;
 
     switch (settings.name) {
        case AppRoutes.mainRoute:
-         return MaterialPageRoute(builder: (_) => HomeLayout());
+         return MaterialPageRoute(builder: (_) => Zoom());
          //case morning azkar route
         case AppRoutes.morningAzkar:
           return MaterialPageRoute(builder: (_) => MorningAzkar());

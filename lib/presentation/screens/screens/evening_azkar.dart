@@ -8,6 +8,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:rebh_el_a5era/shared/components/components.dart';
 import 'package:rebh_el_a5era/shared/constants/app_size.dart';
 import 'package:rebh_el_a5era/shared/constants/my_colors.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../../business_logic/azkar_cubit/azkar_cubit.dart';
 import '../../../data/models/Azkar_model.dart';
 import 'package:clipboard/clipboard.dart';
@@ -25,12 +26,56 @@ class EveningAzkar extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return BlocConsumer<AzkarCubit, AzkarState>(
       listener: (context, state) {
-        // TODO: implement listener
+//if state is  EveningAzkarPauseAudioState showToast2 elseif EveningAzkarPauseAudioState showToast2
+if(state is EveningAzkarPauseAudioState){
+        showToast2(msg: "تم إيقاف الصوت", state: ToastStates.ERROR);
+      }else if(state is EveningAzkarPlayAudioState){
+        showToast2(msg: "تم تشغيل الصوت",state: ToastStates.SUCCESS);
+      }
       },
       builder: (context, state) {
         List<AzkarModel>? eveningAzkarList=AzkarCubit.get(context).eveningAzkarList;
         return Scaffold(
           appBar:AppBar(
+            actions: [
+              InkWell(
+                onTap: () {
+                  AzkarCubit.get(context).playEveningAudio();
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: 10,
+
+                      top: 10,
+                      bottom: 10),
+
+                  child: Container(
+
+                    height: 55,
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: MyColors.floatedButtonColor,
+                      shape: BoxShape.circle,
+
+                    ),
+                    //if state is SocialRadioPlayState then show pause icon else show play icon
+                    child: AzkarCubit.get(context).isPlayingEveningAudio?
+                    Icon(Icons.pause,
+                      size: 30,
+                      color: MyColors.kWhiteColor,)
+                        :Icon(Icons.play_arrow_outlined,
+                      size: 30,
+                      color: MyColors.kWhiteColor,),
+
+                    // child:  Icon(
+                    //   AzkarCubit.get(context).icon,
+                    //   size: 30,
+                    //   color: MyColors.kWhiteColor,
+                    // ),
+                  ),
+                ),
+              ),
+            ],
             centerTitle: true,
             backgroundColor: MyColors.background,
             title: Text(
@@ -143,10 +188,8 @@ class EveningAzkar extends StatelessWidget {
               //icon of share
               IconButton(
                 onPressed: () {
-                  //share zekr.zekr  text with whats up or messanger
-
-
-
+                  //share zekr.zekr using share_plus package
+                  Share.share(zekr.zekr!);
                 },
                 icon: Icon(
                   Icons.share,
